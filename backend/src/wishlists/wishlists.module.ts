@@ -7,7 +7,7 @@ import { UsersModule } from '../users/users.module';
 import { Wish } from '../wishes/entities/wish.entity';
 import { WishesModule } from '../wishes/wishes.module';
 
-import { Wishlist } from './entities/Wishlist.entity';
+import { Wishlist } from './entities/wishlist.entity';
 import { WishlistsController } from './wishlists.controller';
 import { WishlistsService } from './wishlists.service';
 

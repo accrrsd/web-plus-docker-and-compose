@@ -5,12 +5,12 @@ export default () => ({
   db: {
     type: 'postgres',
 
-    database: 'kupipodariday',
-    username: 'student',
-    password: 'student',
+    database: process.env.POSTGRES_DB || 'kupipodariday',
+    username: process.env.POSTGRES_USER || 'student',
+    password: process.env.POSTGRES_PASSWORD || 'student',
 
-    host: process.env.DATABASE_HOST || 'localhost',
-    port: parseInt(process.env.DATABASE_PORT) || 5432,
+    host: process.env.POSTGRES_HOST || 'localhost',
+    port: parseInt(process.env.POSTGRES_PORT) || 5432,
 
     autoLoadModels: true,
   },
