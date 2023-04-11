@@ -1,4 +1,4 @@
 # Env
 .env
-.env.local
-.env.deploy
+# database
+pgdata

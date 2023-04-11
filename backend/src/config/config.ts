@@ -3,14 +3,16 @@ export default () => ({
   jwtSecret: 'jwt_secret',
 
   db: {
-    type: 'postgres',
+    type: process.env.POSTGRES_TYPE ?? 'postgres',
+    database: process.env.POSTGRES_DB ?? 'kupipodariday',
 
-    database: process.env.POSTGRES_DB || 'kupipodariday',
-    username: process.env.POSTGRES_USER || 'student',
-    password: process.env.POSTGRES_PASSWORD || 'student',
+    username: process.env.POSTGRES_USER ?? 'student',
+    password: process.env.POSTGRES_PASSWORD ?? 'student',
 
-    host: process.env.POSTGRES_HOST || 'localhost',
-    port: parseInt(process.env.POSTGRES_PORT) || 5432,
+    host: process.env.POSTGRES_HOST ?? 'database',
+    port: process.env.POSTGRES_PORT
+      ? parseInt(process.env.POSTGRES_PORT)
+      : 5432,
 
     autoLoadModels: true,
   },
